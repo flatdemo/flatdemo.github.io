@@ -2,20 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="32930d96-ee27-4551-83cb-3a27feb318aa" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/garden/2017/02/24/github-blog.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/website/_posts/2017-02-24-github-blog.md" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/garden/2016/12/30/markdown-theme.html" afterPath="$PROJECT_DIR$/garden/2016/12/30/markdown-theme.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/garden/assets/style/style.less" afterPath="$PROJECT_DIR$/garden/assets/style/style.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/garden/index.html" afterPath="$PROJECT_DIR$/garden/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/garden/views/about/index.html" afterPath="$PROJECT_DIR$/garden/views/about/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/garden/views/posts/index.html" afterPath="$PROJECT_DIR$/garden/views/posts/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/website/_layouts/basic.html" afterPath="$PROJECT_DIR$/website/_layouts/basic.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/website/_posts/2016-12-30-markdown-theme.md" afterPath="$PROJECT_DIR$/website/_posts/2016-12-30-markdown-theme.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/website/assets/style/style.less" afterPath="$PROJECT_DIR$/website/assets/style/style.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/website/index.html" afterPath="$PROJECT_DIR$/website/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/website/views/about/index.html" afterPath="$PROJECT_DIR$/website/views/about/index.html" />
     </list>
     <ignored path="flatdemo.github.io.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -48,11 +35,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.less" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="232">
+              <caret line="15" column="98" selection-start-line="15" selection-start-column="98" selection-end-line="15" selection-end-column="98" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.less" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/website/assets/style/style.less">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="334">
-              <caret line="326" column="23" selection-start-line="326" selection-start-column="23" selection-end-line="326" selection-end-column="23" />
+              <caret line="326" column="16" selection-start-line="326" selection-start-column="16" selection-end-line="326" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -76,12 +73,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/website/_layouts/basic.html" />
         <option value="$PROJECT_DIR$/website/_posts/2016-12-30-markdown-theme.md" />
         <option value="$PROJECT_DIR$/website/index.html" />
         <option value="$PROJECT_DIR$/website/views/about/index.html" />
         <option value="$PROJECT_DIR$/website/assets/style/style.less" />
+        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
@@ -381,12 +378,12 @@
       <workItem from="1488020526323" duration="490000" />
       <workItem from="1488023530381" duration="678000" />
       <workItem from="1488070953247" duration="3491000" />
-      <workItem from="1488102260190" duration="7525000" />
+      <workItem from="1488102260190" duration="7914000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13879000" />
+    <option name="totallyTimeSpent" value="14268000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -580,14 +577,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="58">
-          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/website/views/about/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="335">
@@ -599,7 +588,15 @@
     <entry file="file://$PROJECT_DIR$/website/assets/style/style.less">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="334">
-          <caret line="326" column="23" selection-start-line="326" selection-start-column="23" selection-end-line="326" selection-end-column="23" />
+          <caret line="326" column="16" selection-start-line="326" selection-start-column="16" selection-end-line="326" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="15" column="98" selection-start-line="15" selection-start-column="98" selection-end-line="15" selection-end-column="98" />
           <folding />
         </state>
       </provider>
