@@ -5,7 +5,7 @@
     <meta name="keywords" content="前端开发" />
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" />
-    <title>flatdemo的个人网站</title>
+    <title>呆恋小喵的后花园 - 印记</title>
     <link rel="shortcut icon" href="http://oij8a9ql4.bkt.clouddn.com/shortcut.ico" />
     <link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/8.0/styles/sunburst.min.css" />
     <link rel="stylesheet/less" href="/garden/assets/style/style.less" />
@@ -38,24 +38,51 @@
     </ul>
 </nav>
 <a href="javascript:;" class="gotop js_gotop"></a>
-<header class="welcome">
-    <div>
-        <svg>
-            <defs>
-                <mask id="wl-mask">
-                    <path id="wl-path" d="M 0 0 l -50 50 l 150 -80 l -150 150 l 180 -140 l -150 150 l 200 -150 l -200 220 l 280 -220 l -270 280 l 270 -220 l -210 230 l 250 -190 l -180 180 l 250 -160 l -195 190 Z" />
-                </mask>
-            </defs>
-            <g mask="url(#wl-mask)">
-                <image x="0" y="0" xlink:href="http://olz69zcwa.bkt.clouddn.com/IMG_9296%E5%A4%A7%E5%9B%BE.jpg" />
-            </g>
-            <animate xlink:href="#wl-path" attributeName="stroke-dashoffset" from="4322" to="0" dur="2s" />
-        </svg>
-        <h1>Ann Yang</h1>
-        <p>北京大学心理与认知科学学院的在读硕士,本科毕业于中国传媒大学电子信息技术人机交互方向。有志于做一枚优秀的产品汪。热爱新鲜事物,不爱逛街却爱逛Appstore。热衷于各种挑剔目前使用的产品。希望能通过运用心理学的知识帮助洞察市场需求,用户需求以及产品痛点,并和团队齐心协力创造出好的产品。
-        无论是工作还是生活,我都愿意全力以赴。我的座右铭是:善宽以怀,善感以恩,善博以浪,善精以业。</p>
-    </div>
-</header>
+<section class="posts">
+    <ul>
+        
+        <li>
+            <a href="/garden/2017/02/24/github-blog.html" title="使用 Jekyll + Github Page 搭建个人网站">
+                <h3>使用 Jekyll + Github Page 搭建个人网站</h3>
+                <time>24 Feb 2017</time>
+                <p class="abstract">介绍如何使用静态站点生成工具 jekyll 及 github 服务器搭建个人网站。</p>
+                <ul class="c-fix">
+                    
+                    <li>github page</li>
+                    
+                    <li>jekyll</li>
+                    
+                    <li>个人技术博客搭建</li>
+                    
+                </ul>
+            </a>
+        </li>
+        
+        <li>
+            <a href="/garden/2016/12/30/markdown-theme.html" title="自定制 Markdown 主题试水">
+                <h3>自定制 Markdown 主题试水</h3>
+                <time>30 Dec 2016</time>
+                <p class="abstract">展示本站所应用的 markdown 主题</p>
+                <ul class="c-fix">
+                    
+                    <li>关于本站</li>
+                    
+                    <li>说明</li>
+                    
+                </ul>
+            </a>
+        </li>
+        
+    </ul>
+    <div class="paginator js_paginator"></div>
+</section>
+<script>
+    pageData.postsData = {
+        postsUrl: '/garden/views/posts',
+        curPage: 1,
+        totalPage: 1
+    };
+</script>
 
 <script src="/garden/assets/script/main.js"></script>
 </body>
