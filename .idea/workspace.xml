@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="32930d96-ee27-4551-83cb-3a27feb318aa" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/markdown-navigator.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/markdown-navigator/profiles_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="32930d96-ee27-4551-83cb-3a27feb318aa" name="Default" comment="" />
     <ignored path="flatdemo.github.io.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -70,8 +65,8 @@
         <entry file="file://$PROJECT_DIR$/website/_posts/2017-07-20-markdown-theme.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="0">
-                <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <first_editor relative-caret-position="-1093">
+                <caret line="83" column="3" selection-start-line="83" selection-start-column="3" selection-end-line="83" selection-end-column="3" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -286,12 +281,12 @@
       <workItem from="1488102260190" duration="8824000" />
       <workItem from="1500540014784" duration="801000" />
       <workItem from="1500542452863" duration="265000" />
-      <workItem from="1500543463603" duration="119000" />
+      <workItem from="1500543463603" duration="478000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16363000" />
+    <option name="totallyTimeSpent" value="16722000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -612,8 +607,8 @@
     <entry file="file://$PROJECT_DIR$/website/_posts/2017-07-20-markdown-theme.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="0">
-            <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <first_editor relative-caret-position="-1093">
+            <caret line="83" column="3" selection-start-line="83" selection-start-column="3" selection-end-line="83" selection-end-column="3" />
             <folding />
           </first_editor>
           <second_editor />

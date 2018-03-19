@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>噪音惩罚系统</title>
+    <style>
+        * {padding: 0;margin: 0;}
+        ul, li {list-style: none;}
+        .clear:after {content: "";display: block;height: 0;clear: both;visibility: hidden;}
+        .ctrls {width: 80%;margin: 100px auto 50px;display: flex;justify-content: space-between;align-items: center;}
+        .ctrls li {font-size: 14px;line-height: 40px;font-weight: bold;color: #FF5963;padding: 0 20px;border: 1px solid #FF5963;border-radius: 3px;cursor: pointer;}
+        .ctrls li:nth-child(1) {color: #58CBEF;border-color: #58CBEF;}
+        .ctrls li.active {color: #FFF;background: linear-gradient(59deg, #FF5963 0%, #FF7096 100%);}
+        .ctrls li.active:nth-child(1) {background: linear-gradient(-120deg, #45E7DE 0%, #58CBEF 100%);}
+        .audio {width: 70%;margin: 50px auto;}
+        audio {width: 100%;}
+        audio::-webkit-media-controls-mute-button, audio::-webkit-media-controls-volume-slider {position: absolute;z-index: -10;opacity: 0;}
+    </style>
+</head>
+<body>
+<ul class="ctrls clear">
+    <li data-level="0">不惩罚</li>
+    <li class="active" data-level="0.1">Level 1</li>
+    <li data-level="0.2">Level 2</li>
+    <li data-level="0.3">Level 3</li>
+    <li data-level="0.4">Level 4</li>
+    <li data-level="0.5">Level 5</li>
+    <li data-level="0.6">Level 6</li>
+    <li data-level="0.7">Level 7</li>
+    <li data-level="0.8">Level 8</li>
+    <li data-level="0.9">Level 9</li>
+    <li data-level="1.0">Level 10</li>
+</ul>
+<div class="audio">
+    <audio id="audio" src="http://oij8a9ql4.bkt.clouddn.com/everytime.mp3" controls="true"></audio>
+</div>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script>
+var volume = 0.1;
+var audio = document.getElementById('audio');
+audio.volume = volume;
+$('.ctrls').on('click', 'li', function () {
+    $(this).addClass('active').siblings().removeClass('active');
+    volume = $(this).data('level');
+    audio.volume = volume;
+    audio.load();
+});
+</script>
+</body>
+</html>

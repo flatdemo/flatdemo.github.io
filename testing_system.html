@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>大学生批判思维能力测试系统</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        html, body {
+            height: 100%;
+        }
+        body {
+            padding: 50px;
+            background: url("http://oij8a9ql4.bkt.clouddn.com/bg.jpg") no-repeat 50% 50%;
+            background-size: cover;
+        }
+        ul, li {
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+        }
+        .container {
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            -webkit-transform: translate(-50%, -50%);
+                    transform: translate(-50%, -50%);
+            width: 600px;
+            height: 90%;
+            border-radius: 10px;
+            background-color: #FFF;
+            box-shadow: 0 0 10px #9AD4D1;
+            overflow: hidden;
+        }
+        .result .score {
+            font-size: 90px;
+            font-style: italic;
+            font-weight: bold;
+            text-align: center;
+            color: #2ED2C9;
+        }
+        .result h3 {
+            font-size: 18px;
+            line-height: 24px;
+            text-align: center;
+            color: #2ED2C9;
+            margin: 20px 0 40px;
+        }
+        .result li {
+            margin-bottom: 50px;
+        }
+        .result li h4 {
+            font-size: 22px;
+            line-height: 32px;
+            color: #666;
+        }
+        .result li h4 span {
+            font-size: 40px;
+            color: #2ED2C9;
+            margin-right: 15px;
+        }
+        .result li p {
+            font-size: 18px;
+            line-height: 24px;
+            color: #999;
+            margin-top: 10px;
+        }
+        .question {
+            display: none;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            -webkit-transform: translate(-50%, -50%);
+                    transform: translate(-50%, -50%);
+        }
+        .question:first-child {
+            display: block;
+        }
+        .question h3 {
+            font-size: 24px;
+            line-height: 32px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .question h3 span {
+            font-size: 30px;
+            color: #2ED2C9;
+            margin-right: 20px;
+        }
+        .question ul {
+            padding-left: 20px;
+        }
+        .question li {
+            position: relative;
+            font-size: 20px;
+            line-height: 30px;
+            color: #666;
+            padding-left: 35px;
+            margin-bottom: 10px;
+        }
+        .question li span {
+            position: absolute;
+            left: 0;
+            top: 5px;
+            width: 20px;
+            height: 20px;
+            border: 1px solid #CCC;
+            border-radius: 50%;
+            box-sizing: border-box;
+        }
+        .question li.active span {
+            border-color: transparent;
+            box-shadow: 0 0 5px #2ED2C9;
+            background: url("http://oij8a9ql4.bkt.clouddn.com/right.png") no-repeat 50% 50%;
+            background-size: 20px 20px;
+        }
+        .question textarea {
+            width: 400px;
+            height: 200px;
+            font-size: 22px;
+            line-height: 30px;
+            color: #666;
+            padding: 15px;
+            border: 1px solid #CCC;
+            border-radius: 6px;
+            box-sizing: border-box;
+            resize: none;
+            outline: none;
+        }
+        .question .btn {
+            text-align: center;
+            margin-top: 40px;
+        }
+        .question a {
+            display: inline-block;
+            font-size: 20px;
+            line-height: 40px;
+            color: #FFF;
+            padding: 0 30px;
+            border-radius: 20px/50%;
+            background: linear-gradient(-120deg, #45E7DE 0%, #58CBEF 100%)
+        }
+        .mask {
+            display: none;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+        .mask span {
+            position: fixed;
+            left: 0;
+            top: 50%;
+            width: 100%;
+            font-size: 30px;
+            line-height: 40px;
+            text-align: center;
+            color: #2ED2C9;
+            margin-top: -100px;
+        }
+        .mask span:last-child {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+<section class="container"></section>
+<div class="mask"><span>结果计算中...</span><span class="js_countdown">120</span></div>
+<script type="text/x-tmpl" id="tmpl_result">
+    <section class="result">
+        <div class="score">65</div>
+        <h3>具体结果</h3>
+        <ul>
+            {% for (var i = 0;i < o.length;i++) { %}
+            <li>
+                <h4><span>{%=o[i].score%}</span>{%=o[i].title%}</h4>
+                <p>{%=o[i].desc%}</p>
+            </li>
+            {% } %}
+        </ul>
+    </section>
+</script>
+<script type="text/x-tmpl" id="tmpl_question">
+    <section class="question {% if (o.last) { %}last{% } %}">
+        <h3><span>Q</span>{%=o.title%}</h3>
+        {% if (o.type == 'textarea') { %}
+        <textarea autofocus="true"></textarea>
+        {% } else { %}
+        <ul>
+            {% for (var i = 0;i < o.options.length;i++) { %}
+            <li class="{% if (i == 0) { %}active{% } %}"><span></span>{%=o.options[i]%}</li>
+            {% } %}
+        </ul>
+        {% } %}
+        <div class="btn"><a href="javascript:;">提交</a></div>
+    </section>
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/blueimp-JavaScript-Templates/3.11.0/js/tmpl.min.js"></script>
+<script>
+var data1 = [
+    {
+        title: '对某件事如果有四个理由赞同，而只有一个理由反对，我会选择赞同这件事。',
+        options: [
+            '非常赞同',
+            '比较赞同',
+            '赞同',
+            '不赞同',
+            '比较不赞同',
+            '非常不赞同'
+        ]
+    },
+    {
+        title: '既然我知道怎样作这决定，我便不会反复考虑其他的选择。',
+        options: [
+            '非常赞同',
+            '比较赞同',
+            '赞同',
+            '不赞同',
+            '比较不赞同',
+            '非常不赞同'
+        ]
+    },
+    {
+        title: '在小组讨论时，若某人的见解被其他人认为是错误的，他就没有权利去表达意见。',
+        options: [
+            '非常赞同',
+            '比较赞同',
+            '赞同',
+            '不赞同',
+            '比较不赞同',
+            '非常不赞同'
+        ]
+    },
+    {
+        title: '各人有权利发表他们的意见，但我不会理会他们。',
+        options: [
+            '非常赞同',
+            '比较赞同',
+            '赞同',
+            '不赞同',
+            '比较不赞同',
+            '非常不赞同'
+        ]
+    },
+        {
+        title: '我的信念都必须有依据支持。',
+        options: [
+            '非常赞同',
+            '比较赞同',
+            '赞同',
+            '不赞同',
+            '比较不赞同',
+            '非常不赞同'
+        ]
+    },
+        {
+        title: '生活的经验告诉我，处事不必太有逻辑。',
+        options: [
+            '非常赞同',
+            '比较赞同',
+            '赞同',
+            '不赞同',
+            '比较不赞同',
+            '非常不赞同'
+        ]
+    },
+        {
+        title: '我经常反复思考在实践和经验中的对与错。',
+        options: [
+            '非常赞同',
+            '比较赞同',
+            '赞同',
+            '不赞同',
+            '比较不赞同',
+            '非常不赞同'
+        ]
+    },
+        {
+        title: '我可以不断谈论某一问题，但不在乎问题是否得到解决。',
+        options: [
+            '非常赞同',
+            '比较赞同',
+            '赞同',
+            '不赞同',
+            '比较不赞同',
+            '非常不赞同'
+        ]
+    },
+        {
+        title: '最好的论点，往往来自于对某个问题的瞬间感觉。',
+        options: [
+            '非常赞同',
+            '比较赞同',
+            '赞同',
+            '不赞同',
+            '比较不赞同',
+            '非常不赞同'
+        ]
+    },
+        {
+        title: '事物的本质和它的表象是一致的。',
+        options: [
+            '非常赞同',
+            '比较赞同',
+            '赞同',
+            '不赞同',
+            '比较不赞同',
+            '非常不赞同'
+        ]
+    },
+        {
+        title: '所谓真相，不外乎个人的看法。',
+        options: [
+            '非常赞同',
+            '比较赞同',
+            '赞同',
+            '不赞同',
+            '比较不赞同',
+            '非常不赞同'
+        ]
+    },
+        {
+        title: '对我自己所相信的事，我是坚信不疑的。',
+        options: [
+            '非常赞同',
+            '比较赞同',
+            '赞同',
+            '不赞同',
+            '比较不赞同',
+            '非常不赞同'
+        ]
+    },
+    {
+        title: '你认为大学应该推行综合教育还是专才教育？请花3分钟写下你的观点。',
+        type: 'textarea',
+        last: true
+    }
+];
+var data2 = [
+    {
+        title: '认知成熟度',
+        score: '较弱',
+        desc: '判断缺乏审慎性，总是鲁莽作出判断或不断修改已有判断。缺乏一个稳定的价值评判标准，在欠缺全面知识的情况下，无法权益利弊作出更好的决定。'
+    },
+    {
+        title: '寻找真相',
+        score: '较弱',
+        desc: '寻找问题本质时，对问题的理解过于主观，流于表面。虽然对于寻找真相的态度真诚，但是寻找真相过程中，缺乏坚定性，因此在寻找真相时很难发现事物的本质，通常只是浅尝辄止。'
+    },
+    {
+        title: '分析能力',
+        score: '一般',
+        desc: '能主动寻找问题背后的根源，但是对问题的分析过于主观，缺乏明确的方法论。表达观点时缺乏逻辑，条理不清晰，没有真正寻找到问题根源所在，并以合理理由和证据去理解症结和预计后果。'
+    },
+    {
+        title: '系统化能力',
+        score: '稍弱',
+        desc: '分析和处理问题时，思维太过于散乱，难以有目标有层次的分解问题。并且在表达观点时，语言和文字组织能力不佳。'
+    },
+    {
+        title: '开放思想',
+        score: '一般',
+        desc: '对不同的意见能采取宽容的态度，但是潜在意识还是会受环境影响，而导致隐型个人偏见。'
+    }
+];
+for (var i = 0;i < data1.length;i++) {
+    var question = tmpl('tmpl_question', data1[i]);
+    $('.container').append(question);
+}
+$('.btn a').on('click', function () {
+    $(this).parents('.question').hide().next().show();
+    if ($(this).parents('.question').hasClass('last')) {
+        var result = tmpl('tmpl_result', data2);
+        $('.mask').show();
+        var count = 100;
+        var t = setInterval(function () {
+            if (count < 0) {
+                $('body').append(result).css('background', '#FFF');
+                $('.container').hide();
+                $('.mask').hide();
+                $('.result').show();
+                clearInterval(t);
+            }
+            $('.js_countdown').text(count);
+            count--;
+        }, 700);
+    }
+});
+$('.question li').on('click', function () {
+    $(this).addClass('active').siblings().removeClass('active');
+});
+</script>
+</body>
+</html>
